@@ -1,0 +1,106 @@
+/* ----------------GENERAL---------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*outline: 2px solid red;*/
+}
+
+/* ----------------UTILITY---------------- */
+.debug{
+    background-color: rgba(255, 0, 0, .25);
+    border: 1px solid black;
+}
+
+.hide{
+    display: none;
+}
+
+/* ------------------MAIN------------------ */
+.main-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left top, #0d6efd, #3d4eb5, #383374, #251c3a, #030105);
+}
+
+.container{
+    display: flex;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(0, 0, 0);
+}
+
+.item-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.slider{
+    width: 80%;
+    height: 100%;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right-slider{
+    position: relative;
+    width: 20%;
+}
+
+.box{
+    height: calc(100% / 4);
+}
+
+.item-box{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+}
+
+.rmv-opacity{
+    opacity: 1;
+    border: 1px solid white;
+}
+
+.btn-arrow{
+    z-index: 999;
+    position: absolute;
+    transform: translate(+50%);
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.btn-arrow:hover{
+    background-color: rgba(0, 0, 0);
+}
+
+.btn-arrow.up{
+    right: 50%;
+    top: 5px;
+}
+
+.btn-arrow.down{
+    right: 50%;
+    bottom: 5px;
+}
+
+.item{
+    display: none;
+}
+
+.item.active{
+    display: block;
+}
