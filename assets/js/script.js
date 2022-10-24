@@ -6,9 +6,12 @@ const imagesArray = [
 ];
 
 let imagesTags = '';
+let sliderMooving = 0;
+let autoPlay;
 
 const slider = document.querySelector('.item-wrapper');
 const rightSlider = document.querySelector('.right-slider');
+const container = document.querySelector('.container');
 
 for(let i = 0; i < imagesArray.length; i++){
     imagesTags += `
@@ -30,10 +33,12 @@ const itemsBox = document.getElementsByClassName('item-box');
 items[counterImages].classList.add('active');
 itemsBox[counterImages].classList.add('rmv-opacity');
 
+autoCarousel();
 
 prev.addEventListener('click',function(){
     nextPrev(true);
 })
+
 next.addEventListener('click',function(){
     nextPrev(false);
 })
@@ -41,7 +46,7 @@ next.addEventListener('click',function(){
 function nextPrev(isNext){
     items[counterImages].classList.remove('active');
     itemsBox[counterImages].classList.remove('rmv-opacity');
-
+    
     if(isNext){
       counterImages--;
       if(counterImages < 0) counterImages = numImages - 1;
@@ -53,3 +58,13 @@ function nextPrev(isNext){
     items[counterImages].classList.add('active');
     itemsBox[counterImages].classList.add('rmv-opacity');
 }
+
+function autoCarousel(){
+    autoPlay = setInterval(nextPrev, 1000);
+}
+
+container.addEventListener('mouseover', function(){
+    clearInterval(autoPlay);
+});
+
+container.addEventListener('mouseout', autoCarousel);
