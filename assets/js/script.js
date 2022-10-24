@@ -2,7 +2,8 @@ const imagesArray = [
     '01.jpg',
     '02.jpg',
     '03.jpg',
-    '04.jpg'
+    '04.jpg',
+    '05.jpg'
 ];
 
 let imagesTags = '';
@@ -20,7 +21,7 @@ for(let i = 0; i < imagesArray.length; i++){
 }
 
 let counterImages = 0;
-const numImages = 4;
+const numImages = 5;
 
 const prev = document.querySelector('.up');
 const next = document.querySelector('.down');
